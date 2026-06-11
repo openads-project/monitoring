@@ -32,13 +32,32 @@ class RVIZ_PLUGINS_PUBLIC GeofenceDisplay : public rviz_common::MessageFilterDis
   Q_OBJECT
 
  public:
+  /**
+   * @brief Construct a new GeofenceDisplay.
+   */
   GeofenceDisplay();
+
+  /**
+   * @brief Destroy the GeofenceDisplay.
+   */
   ~GeofenceDisplay() override;
 
+  /**
+   * @brief Initialize display resources and properties.
+   */
   void onInitialize() override;
+
+  /**
+   * @brief Reset the display and clear all rendered data.
+   */
   void reset() override;
 
  protected:
+  /**
+   * @brief Process an incoming geofence polygon message.
+   *
+   * @param msg Incoming polygon-stamped geofence message.
+   */
   void processMessage(geometry_msgs::msg::PolygonStamped::ConstSharedPtr msg) override;
 
  private:
