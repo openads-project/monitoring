@@ -1,3 +1,6 @@
+// Copyright Institute for Automotive Engineering (ika), RWTH Aachen University
+// SPDX-License-Identifier: Apache-2.0
+
 /*
  * Geofence display - renders polygon edges as thin 3D quads with vertical fade.
  */
