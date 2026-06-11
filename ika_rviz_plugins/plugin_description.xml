@@ -1,0 +1,12 @@
+<library path="ika_rviz_plugins">
+  <class
+    name="ika_rviz_plugins/Geofence"
+    type="ika_rviz_plugins::displays::GeofenceDisplay"
+    base_class_type="rviz_common::Display"
+  >
+    <description>
+      Visualizes a geofence from geometry_msgs::PolygonStamped as vertical edge bands with a vertical fade. Edges are rendered as thin 3D rectangles with a configurable height, thickness, and alpha gradient.
+    </description>
+    <message_type>geometry_msgs/msg/PolygonStamped</message_type>
+  </class>
+</library>
