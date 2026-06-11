@@ -1,5 +1,5 @@
 # TODO: copy only necessary ROS components from carla/ros-bridge and remove the rest
-# mkdir -p $WORKSPACE/src/upstream
+mkdir -p $WORKSPACE/src/upstream
 # git clone --recurse-submodules https://${GIT_HTTPS_USER}:${GIT_HTTPS_PASSWORD}@gitlab.ika.rwth-aachen.de/fb-fi/simulation/carla/ros-bridge.git
 # mv ros-bridge/rviz_carla_plugin $WORKSPACE/src/upstream
 # mv ros-bridge/carla_ros_scenario_runner_types $WORKSPACE/src/upstream
