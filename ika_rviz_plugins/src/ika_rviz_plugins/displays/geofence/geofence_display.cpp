@@ -21,45 +21,35 @@
 #include "rviz_common/validate_floats.hpp"
 #include "rviz_rendering/material_manager.hpp"
 
-namespace ika_rviz_plugins
-{
-namespace displays
-{
+namespace ika_rviz_plugins {
+namespace displays {
 
-namespace
-{
-bool validateFloats(const geometry_msgs::msg::PolygonStamped::ConstSharedPtr & msg)
-{
+namespace {
+bool validateFloats(const geometry_msgs::msg::PolygonStamped::ConstSharedPtr& msg) {
   return rviz_common::validateFloats(msg->polygon.points);
 }
-}
+}  // namespace
 
-GeofenceDisplay::GeofenceDisplay()
-{
-  color_property_ = new rviz_common::properties::ColorProperty(
-    "Color", QColor(25, 255, 0),
-    "Base color for geofence edges.", this, SLOT(queueRender()));
+GeofenceDisplay::GeofenceDisplay() {
+  color_property_ = new rviz_common::properties::ColorProperty("Color", QColor(25, 255, 0), "Base color for geofence edges.",
+                                                               this, SLOT(queueRender()));
 
   bottom_alpha_property_ = new rviz_common::properties::FloatProperty(
-    "Bottom Alpha", 0.8f,
-    "Alpha at the bottom of the edge (0..1).", this, SLOT(queueRender()));
+      "Bottom Alpha", 0.8f, "Alpha at the bottom of the edge (0..1).", this, SLOT(queueRender()));
   bottom_alpha_property_->setMin(0.0);
   bottom_alpha_property_->setMax(1.0);
 
-  top_alpha_property_ = new rviz_common::properties::FloatProperty(
-    "Top Alpha", 0.05f,
-    "Alpha at the top of the edge (0..1).", this, SLOT(queueRender()));
+  top_alpha_property_ = new rviz_common::properties::FloatProperty("Top Alpha", 0.05f, "Alpha at the top of the edge (0..1).",
+                                                                   this, SLOT(queueRender()));
   top_alpha_property_->setMin(0.0);
   top_alpha_property_->setMax(1.0);
 
-  height_property_ = new rviz_common::properties::FloatProperty(
-    "Height", 2.0f,
-    "Extrusion height of the edges (meters).", this, SLOT(queueRender()));
+  height_property_ = new rviz_common::properties::FloatProperty("Height", 2.0f, "Extrusion height of the edges (meters).", this,
+                                                                SLOT(queueRender()));
   height_property_->setMin(0.0);
 
   thickness_property_ = new rviz_common::properties::FloatProperty(
-    "Thickness", 0.05f,
-    "Visual thickness of the edge band (meters).", this, SLOT(queueRender()));
+      "Thickness", 0.05f, "Visual thickness of the edge band (meters).", this, SLOT(queueRender()));
   thickness_property_->setMin(0.0);
 
   static int geofence_count = 0;
@@ -68,33 +58,28 @@ GeofenceDisplay::GeofenceDisplay()
   material_->setCullingMode(Ogre::CULL_NONE);
 }
 
-GeofenceDisplay::~GeofenceDisplay()
-{
+GeofenceDisplay::~GeofenceDisplay() {
   if (initialized()) {
     scene_manager_->destroyManualObject(manual_object_);
   }
 }
 
-void GeofenceDisplay::onInitialize()
-{
+void GeofenceDisplay::onInitialize() {
   MFDClass::onInitialize();
   manual_object_ = scene_manager_->createManualObject();
   manual_object_->setDynamic(true);
   scene_node_->attachObject(manual_object_);
 }
 
-void GeofenceDisplay::reset()
-{
+void GeofenceDisplay::reset() {
   MFDClass::reset();
   manual_object_->clear();
 }
 
-void GeofenceDisplay::processMessage(geometry_msgs::msg::PolygonStamped::ConstSharedPtr msg)
-{
+void GeofenceDisplay::processMessage(geometry_msgs::msg::PolygonStamped::ConstSharedPtr msg) {
   if (!validateFloats(msg)) {
-    setStatus(
-      rviz_common::properties::StatusProperty::Error, "Topic",
-      "Message contained invalid floating point values (nans or infs)");
+    setStatus(rviz_common::properties::StatusProperty::Error, "Topic",
+              "Message contained invalid floating point values (nans or infs)");
     return;
   }
 
@@ -108,11 +93,8 @@ void GeofenceDisplay::processMessage(geometry_msgs::msg::PolygonStamped::ConstSh
   manual_object_->clear();
 
   const auto base_color_qt = color_property_->getColor();
-  Ogre::ColourValue base_color(
-    static_cast<float>(base_color_qt.redF()),
-    static_cast<float>(base_color_qt.greenF()),
-    static_cast<float>(base_color_qt.blueF()),
-    1.0f);
+  Ogre::ColourValue base_color(static_cast<float>(base_color_qt.redF()), static_cast<float>(base_color_qt.greenF()),
+                               static_cast<float>(base_color_qt.blueF()), 1.0f);
 
   const float alpha_bottom = std::max(0.0f, std::min(1.0f, bottom_alpha_property_->getFloat()));
   const float alpha_top = std::max(0.0f, std::min(1.0f, top_alpha_property_->getFloat()));
@@ -120,8 +102,7 @@ void GeofenceDisplay::processMessage(geometry_msgs::msg::PolygonStamped::ConstSh
   const float thickness = std::max(0.0f, thickness_property_->getFloat());
 
   // If any alpha < 1, enable alpha blending
-  rviz_rendering::MaterialManager::enableAlphaBlending(
-    material_, std::min(alpha_bottom, alpha_top));
+  rviz_rendering::MaterialManager::enableAlphaBlending(material_, std::min(alpha_bottom, alpha_top));
 
   const size_t n = msg->polygon.points.size();
   if (n < 2 || height <= 0.0f) {
@@ -130,38 +111,39 @@ void GeofenceDisplay::processMessage(geometry_msgs::msg::PolygonStamped::ConstSh
 
   // Two quads per edge if thickness > 0, otherwise one quad centered on the edge normal.
   // We'll use OT_TRIANGLE_LIST and per-vertex colors for vertical fade.
-  manual_object_->begin(
-    material_->getName(), Ogre::RenderOperation::OT_TRIANGLE_LIST, "rviz_rendering");
+  manual_object_->begin(material_->getName(), Ogre::RenderOperation::OT_TRIANGLE_LIST, "rviz_rendering");
 
   // Helper lambda to push a quad as two triangles with vertical fade.
   unsigned int vertex_index = 0;
-  auto add_quad = [&](
-      const Ogre::Vector3 & b0,
-      const Ogre::Vector3 & b1,
-      const Ogre::Vector3 & t1,
-      const Ogre::Vector3 & t0) {
-      // Vertex order: b0, b1, t1, t0
-      const unsigned int start_index = vertex_index;
+  auto add_quad = [&](const Ogre::Vector3& b0, const Ogre::Vector3& b1, const Ogre::Vector3& t1, const Ogre::Vector3& t0) {
+    // Vertex order: b0, b1, t1, t0
+    const unsigned int start_index = vertex_index;
 
-      Ogre::ColourValue bottom_color = base_color; bottom_color.a = alpha_bottom;
-      Ogre::ColourValue top_color = base_color; top_color.a = alpha_top;
+    Ogre::ColourValue bottom_color = base_color;
+    bottom_color.a = alpha_bottom;
+    Ogre::ColourValue top_color = base_color;
+    top_color.a = alpha_top;
 
-      manual_object_->position(b0); manual_object_->colour(bottom_color);
-      manual_object_->position(b1); manual_object_->colour(bottom_color);
-      manual_object_->position(t1); manual_object_->colour(top_color);
-      manual_object_->position(t0); manual_object_->colour(top_color);
+    manual_object_->position(b0);
+    manual_object_->colour(bottom_color);
+    manual_object_->position(b1);
+    manual_object_->colour(bottom_color);
+    manual_object_->position(t1);
+    manual_object_->colour(top_color);
+    manual_object_->position(t0);
+    manual_object_->colour(top_color);
 
-      // Two triangles: (0,1,2) and (0,2,3)
-      manual_object_->triangle(start_index + 0, start_index + 1, start_index + 2);
-      manual_object_->triangle(start_index + 0, start_index + 2, start_index + 3);
-      vertex_index += 4;
-    };
+    // Two triangles: (0,1,2) and (0,2,3)
+    manual_object_->triangle(start_index + 0, start_index + 1, start_index + 2);
+    manual_object_->triangle(start_index + 0, start_index + 2, start_index + 3);
+    vertex_index += 4;
+  };
 
   const Ogre::Vector3 z_up(0.0f, 0.0f, 1.0f);
 
   for (size_t i = 0; i < n; ++i) {
-    const auto & p0 = msg->polygon.points[i];
-    const auto & p1 = msg->polygon.points[(i + 1) % n];
+    const auto& p0 = msg->polygon.points[i];
+    const auto& p1 = msg->polygon.points[(i + 1) % n];
 
     Ogre::Vector3 P0(p0.x, p0.y, p0.z);
     Ogre::Vector3 P1(p1.x, p1.y, p1.z);

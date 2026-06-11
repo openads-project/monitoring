@@ -11,50 +11,43 @@
 
 #include "ika_rviz_plugins/visibility_control.hpp"
 
-namespace Ogre
-{
+namespace Ogre {
 class ManualObject;
 }
 
-namespace rviz_common
-{
-namespace properties
-{
+namespace rviz_common {
+namespace properties {
 class ColorProperty;
 class FloatProperty;
 }  // namespace properties
 }  // namespace rviz_common
 
-namespace ika_rviz_plugins
-{
-namespace displays
-{
+namespace ika_rviz_plugins {
+namespace displays {
 
-class IKA_RVIZ_PLUGINS_PUBLIC GeofenceDisplay : public
-  rviz_common::MessageFilterDisplay<geometry_msgs::msg::PolygonStamped>
-{
+class IKA_RVIZ_PLUGINS_PUBLIC GeofenceDisplay : public rviz_common::MessageFilterDisplay<geometry_msgs::msg::PolygonStamped> {
   Q_OBJECT
 
-public:
+ public:
   GeofenceDisplay();
   ~GeofenceDisplay() override;
 
   void onInitialize() override;
   void reset() override;
 
-protected:
+ protected:
   void processMessage(geometry_msgs::msg::PolygonStamped::ConstSharedPtr msg) override;
 
-private:
-  Ogre::ManualObject * manual_object_;
+ private:
+  Ogre::ManualObject* manual_object_;
   Ogre::MaterialPtr material_;
 
   // Properties
-  rviz_common::properties::ColorProperty * color_property_;
-  rviz_common::properties::FloatProperty * bottom_alpha_property_;
-  rviz_common::properties::FloatProperty * top_alpha_property_;
-  rviz_common::properties::FloatProperty * height_property_;
-  rviz_common::properties::FloatProperty * thickness_property_;
+  rviz_common::properties::ColorProperty* color_property_;
+  rviz_common::properties::FloatProperty* bottom_alpha_property_;
+  rviz_common::properties::FloatProperty* top_alpha_property_;
+  rviz_common::properties::FloatProperty* height_property_;
+  rviz_common::properties::FloatProperty* thickness_property_;
 };
 
 }  // namespace displays

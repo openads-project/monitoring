@@ -15,10 +15,6 @@ repositories:
     type: git
     url: https://github.com/tu-darmstadt-ros-pkg/hector_recorder.git
     version: main
-  <!-- ika_rviz_plugins:
-    type: git
-    url: https://gitlab.ika.rwth-aachen.de/fb-fi/its-modules/monitoring/ika_rviz_plugins.git
-    version: v1.0.0 -->
   lanelet2_map_server:
     type: git
     url: https://github.com/openads-project/lanelet2_map_server.git
