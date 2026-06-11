@@ -1,7 +1,7 @@
-<library path="ika_rviz_plugins">
+<library path="rviz_plugins">
   <class
-    name="ika_rviz_plugins/Geofence"
-    type="ika_rviz_plugins::displays::GeofenceDisplay"
+    name="rviz_plugins/Geofence"
+    type="rviz_plugins::displays::GeofenceDisplay"
     base_class_type="rviz_common::Display"
   >
     <description>

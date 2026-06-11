@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
-  <name>ika_rviz_plugins</name>
+  <name>rviz_plugins</name>
   <version>1.0.0</version>
   <description>Custom RViz plugins not directly associated with a specific repository</description>
 

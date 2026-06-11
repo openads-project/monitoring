@@ -2,7 +2,7 @@
  * Geofence display - renders polygon edges as thin 3D quads with vertical fade.
  */
 
-#include "ika_rviz_plugins/displays/geofence/geofence_display.hpp"
+#include "rviz_plugins/displays/geofence/geofence_display.hpp"
 
 #include <OgreManualObject.h>
 #include <OgreMaterialManager.h>
@@ -21,7 +21,7 @@
 #include "rviz_common/validate_floats.hpp"
 #include "rviz_rendering/material_manager.hpp"
 
-namespace ika_rviz_plugins {
+namespace rviz_plugins {
 namespace displays {
 
 namespace {
@@ -183,7 +183,7 @@ void GeofenceDisplay::processMessage(geometry_msgs::msg::PolygonStamped::ConstSh
 }
 
 }  // namespace displays
-}  // namespace ika_rviz_plugins
+}  // namespace rviz_plugins
 
 #include <pluginlib/class_list_macros.hpp>  // NOLINT
-PLUGINLIB_EXPORT_CLASS(ika_rviz_plugins::displays::GeofenceDisplay, rviz_common::Display)
+PLUGINLIB_EXPORT_CLASS(rviz_plugins::displays::GeofenceDisplay, rviz_common::Display)

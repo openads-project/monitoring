@@ -2,14 +2,14 @@
  * Geofence display for geometry_msgs::msg::PolygonStamped
  */
 
-#ifndef IKA_RVIZ_PLUGINS__DISPLAYS__GEOFENCE__GEOFENCE_DISPLAY_HPP_
-#define IKA_RVIZ_PLUGINS__DISPLAYS__GEOFENCE__GEOFENCE_DISPLAY_HPP_
+#ifndef RVIZ_PLUGINS__DISPLAYS__GEOFENCE__GEOFENCE_DISPLAY_HPP_
+#define RVIZ_PLUGINS__DISPLAYS__GEOFENCE__GEOFENCE_DISPLAY_HPP_
 
 #include "geometry_msgs/msg/polygon_stamped.hpp"
 
 #include "rviz_common/message_filter_display.hpp"
 
-#include "ika_rviz_plugins/visibility_control.hpp"
+#include "rviz_plugins/visibility_control.hpp"
 
 namespace Ogre {
 class ManualObject;
@@ -22,10 +22,10 @@ class FloatProperty;
 }  // namespace properties
 }  // namespace rviz_common
 
-namespace ika_rviz_plugins {
+namespace rviz_plugins {
 namespace displays {
 
-class IKA_RVIZ_PLUGINS_PUBLIC GeofenceDisplay : public rviz_common::MessageFilterDisplay<geometry_msgs::msg::PolygonStamped> {
+class RVIZ_PLUGINS_PUBLIC GeofenceDisplay : public rviz_common::MessageFilterDisplay<geometry_msgs::msg::PolygonStamped> {
   Q_OBJECT
 
  public:
@@ -51,6 +51,6 @@ class IKA_RVIZ_PLUGINS_PUBLIC GeofenceDisplay : public rviz_common::MessageFilte
 };
 
 }  // namespace displays
-}  // namespace ika_rviz_plugins
+}  // namespace rviz_plugins
 
-#endif  // IKA_RVIZ_PLUGINS__DISPLAYS__GEOFENCE__GEOFENCE_DISPLAY_HPP_
+#endif  // RVIZ_PLUGINS__DISPLAYS__GEOFENCE__GEOFENCE_DISPLAY_HPP_

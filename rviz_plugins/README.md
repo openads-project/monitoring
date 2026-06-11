@@ -1,4 +1,4 @@
-# ika_rviz_plugins
+# rviz_plugins
 
 This repository contains a set of RViz plugins for visualizing different types of data that are not directly associated with a specific repository (e.g. [perception_interfaces](https://github.com/ika-rwth-aachen/perception_interfaces)).
 
