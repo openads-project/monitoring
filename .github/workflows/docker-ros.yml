@@ -12,17 +12,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  free-disk-space:
-    runs-on: ubuntu-latest
-    steps:
-
-    - name: Free Disk Space (Ubuntu)
-      uses: jlumbroso/free-disk-space@main
-      with:
-        tool-cache: false
   docker-ros:
     runs-on: ubuntu-latest
     steps:
+      - name: Free Disk Space (Ubuntu)
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
       - uses: ika-rwth-aachen/docker-ros@main
         with:
           platform: amd64,arm64
