@@ -10,8 +10,8 @@ services:
       RVIZ_CONFIG: ${RVIZ_CONFIG:-/docker-ros/ws/install/rviz_plugins/share/rviz_plugins/config/conf.rviz}
       USE_SIM_TIME: ${USE_SIM_TIME:-false}
       DISPLAY: ${DISPLAY:-""}
-    volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
+    # volumes:
+    #   - /tmp/.X11-unix:/tmp/.X11-unix
     deploy:
       resources:
         reservations:
