@@ -26,7 +26,6 @@ jobs:
           base-image: rwthika/ros2-cuda:jazzy-desktop-full
           rmw-implementation: rmw_zenoh_cpp
           command: rviz2
-          enable-industrial-ci: true
           label-maintainer: Institute for Automotive Engineering (ika), RWTH Aachen University <opensource@ika.rwth-aachen.de>
           label-authors: Institute for Automotive Engineering (ika), RWTH Aachen University <opensource@ika.rwth-aachen.de>
         env:
