@@ -1,0 +1,31 @@
+services:
+
+  monitoring:
+    image: ghcr.io/openads-project/monitoring:latest_init_ci
+    environment:
+      # --- name ------
+      NAMESPACE: /
+      NAME: monitoring
+      # --- other -----
+      RVIZ_CONFIG: ${RVIZ_CONFIG:-/docker-ros/ws/install/rviz_plugins/share/rviz_plugins/config/conf.rviz}
+      USE_SIM_TIME: ${USE_SIM_TIME:-false}
+      DISPLAY: ${DISPLAY:-""}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    command:
+      - /bin/bash
+      - -ic
+      - |
+        ros2 run rviz2 rviz2 \
+          -d $${RVIZ_CONFIG} \
+          --ros-args \
+            -r __ns:=$${NAMESPACE} \
+            -r __node:=$${NAME} \
+            -p use_sim_time:=$${USE_SIM_TIME}

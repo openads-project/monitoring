@@ -61,6 +61,11 @@ install(
 )
 
 install(
+  DIRECTORY config/
+  DESTINATION config
+)
+
+install(
   FILES plugin_description.xml
   DESTINATION share/${PROJECT_NAME}
 )
