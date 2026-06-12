@@ -21,7 +21,7 @@ jobs:
           tool-cache: true
       - uses: ika-rwth-aachen/docker-ros@main
         with:
-          platform: amd64,arm64
+          platform: amd64
           target: dev,run
           base-image: rwthika/ros2-cuda:jazzy-desktop-full
           rmw-implementation: rmw_zenoh_cpp
