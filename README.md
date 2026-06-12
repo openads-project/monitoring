@@ -30,6 +30,7 @@ This repository provides a monitoring and visualization container including, e.g
     docker run --gpus all --volume /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY --rm -it ghcr.io/openads-project/monitoring:latest bash
     ```
 1. In the container, you can run graphical tools for monitoring and visualization or record data. For the latter, make sure to mount a local folder into the container with the `--volume` argument.
+
     ```bash
     # RViz: message visualization
     rviz2
