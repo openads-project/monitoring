@@ -10,6 +10,7 @@ services:
       RVIZ_CONFIG: ${RVIZ_CONFIG:-/docker-ros/ws/install/rviz_plugins/share/rviz_plugins/config/conf.rviz}
       USE_SIM_TIME: ${USE_SIM_TIME:-false}
       DISPLAY: ${DISPLAY:-""}
+    # --- uncomment the following lines to enable GUI support ---
     # volumes:
     #   - /tmp/.X11-unix:/tmp/.X11-unix
     deploy:
