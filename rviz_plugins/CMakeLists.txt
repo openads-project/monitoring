@@ -55,6 +55,11 @@ install(
   RUNTIME DESTINATION bin
 )
 
+install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}
+  OPTIONAL
+)
+
 install(
   DIRECTORY include/
   DESTINATION include
