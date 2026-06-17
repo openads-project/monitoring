@@ -90,6 +90,7 @@ Package and node interfaces are documented in the respective package READMEs lis
 
 | Package | Description |
 | --- | --- |
+| [monitoring](monitoring/README.md) | Monitoring launch package |
 | [rviz_plugins](rviz_plugins/README.md) | Custom RViz plugins not directly associated with a specific repository |
 
 ## ⚖️ Licensing
