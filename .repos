@@ -1,0 +1,57 @@
+repositories:
+  carla_msgs:
+    type: git
+    url: https://github.com/carla-simulator/ros-carla-msgs.git
+    version: 081fdcdc8a4f8d4ce936b792c4ef13aba3fd7478
+  cloudini:
+    type: git
+    url: https://github.com/facontidavide/cloudini.git
+    version: 1.2.0
+  etsi_its_messages:
+    type: git
+    url: https://github.com/ika-rwth-aachen/etsi_its_messages.git
+    version: v3.4.0
+  hector_recorder:
+    type: git
+    url: https://github.com/tu-darmstadt-ros-pkg/hector_recorder.git
+    version: 3942accff80ebca43257db67c70b63ec8a018fb4
+  lanelet2_map_server:
+    type: git
+    url: https://github.com/openads-project/lanelet2_map_server.git
+    version: v1.2.0
+  perception_interfaces:
+    type: git
+    url: https://github.com/ika-rwth-aachen/perception_interfaces.git
+    version: v1.1.0
+  planning_interfaces:
+    type: git
+    url: https://github.com/ika-rwth-aachen/planning_interfaces.git
+    version: v1.1.0
+  ros2bag_tools:
+    type: git
+    url: https://github.com/AIT-Assistive-Autonomous-Systems/ros2bag_tools.git
+    version: d5eb9419aa2347204aa0e33949e7545192f3bbdf
+  rtcm_msgs:
+    type: git
+    url: https://github.com/tilk/rtcm_msgs.git
+    version: 1.1.6 # TODO: remove after orin runs with ubuntu24
+  rviz:
+    type: git
+    url: https://github.com/ika-rwth-aachen/rviz.git # revert after merge in rviz
+    version: jazzy-dropdown-menu-compressed-option
+  rviz_2d_overlay_plugins:
+    type: git
+    url: https://github.com/teamspatzenhirn/rviz_2d_overlay_plugins.git
+    version: 36b3c86 # TODO: back to main once https://github.com/teamspatzenhirn/rviz_2d_overlay_plugins/issues/27 is fixed
+  sbg_driver:
+    type: git
+    url: https://github.com/ika-rwth-aachen/sbg_ros2_driver.git
+    version: fix-body-outputs
+  zed-ros2-interfaces:
+    type: git
+    url: https://github.com/stereolabs/zed-ros2-interfaces.git
+    version: humble-v4.1.4
+  zed-ros2-examples:
+    type: git
+    url: https://github.com/stereolabs/zed-ros2-examples.git
+    version: humble-v4.1.4

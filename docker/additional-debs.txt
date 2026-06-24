@@ -1,0 +1,17 @@
+libproj-dev
+libxcb-cursor0
+libxcb-icccm4
+libxcb-keysyms1
+libxcb-shape0
+libxkbcommon-x11-0
+ros-$ROS_DISTRO-ackermann-msgs
+ros-$ROS_DISTRO-ffmpeg-image-transport
+ros-$ROS_DISTRO-gps-msgs
+ros-$ROS_DISTRO-grid-map-rviz-plugin
+ros-$ROS_DISTRO-image-transport-plugins
+ros-$ROS_DISTRO-point-cloud-transport-plugins
+ros-$ROS_DISTRO-rqt-tf-tree
+ros-$ROS_DISTRO-rviz-default-plugins
+ros-$ROS_DISTRO-rviz-visual-tools
+ros-$ROS_DISTRO-topic-tools
+ros-$ROS_DISTRO-vision-msgs-rviz-plugins

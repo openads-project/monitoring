@@ -1,20 +1,18 @@
-# openads_demo_module
+# monitoring
 
 <p align="center">
   <a href="https://github.com/openads-project"><img src="https://img.shields.io/badge/OpenADS-f5ff01"/></a>
   <a href="https://www.ros.org"><img src="https://img.shields.io/badge/ROS 2-jazzy-22314e"/></a>
-  <a href="https://github.com/openads-project/openads_demo_module/releases/latest"><img src="https://img.shields.io/github/v/release/openads-project/openads_demo_module"/></a>
-  <a href="https://github.com/openads-project/openads_demo_module/blob/main/LICENSE"><img src="https://img.shields.io/github/license/openads-project/openads_demo_module"/></a>
+  <a href="https://github.com/openads-project/monitoring/releases/latest"><img src="https://img.shields.io/github/v/release/openads-project/monitoring"/></a>
+  <a href="https://github.com/openads-project/monitoring/blob/main/LICENSE"><img src="https://img.shields.io/github/license/openads-project/monitoring"/></a>
   <br>
-  <a href="https://github.com/openads-project/openads_demo_module/actions/workflows/docker-ros.yml"><img src="https://github.com/openads-project/openads_demo_module/actions/workflows/docker-ros.yml/badge.svg"/></a>
-  <a href="https://github.com/openads-project/openads_demo_module/actions/workflows/compose-oci.yml"><img src="https://github.com/openads-project/openads_demo_module/actions/workflows/compose-oci.yml/badge.svg"/></a>
-  <a href="https://openads-project.github.io/openads_demo_module"><img src="https://github.com/openads-project/openads_demo_module/actions/workflows/docs.yml/badge.svg"/></a>
-  <a href="https://github.com/openads-project/openads_demo_module/actions/workflows/consistency.yml"><img src="https://github.com/openads-project/openads_demo_module/actions/workflows/consistency.yml/badge.svg"/></a>
+  <a href="https://github.com/openads-project/monitoring/actions/workflows/docker-ros.yml"><img src="https://github.com/openads-project/monitoring/actions/workflows/docker-ros.yml/badge.svg"/></a>
+  <a href="https://github.com/openads-project/monitoring/actions/workflows/compose-oci.yml"><img src="https://github.com/openads-project/monitoring/actions/workflows/compose-oci.yml/badge.svg"/></a>
+  <a href="https://openads-project.github.io/monitoring"><img src="https://github.com/openads-project/monitoring/actions/workflows/docs.yml/badge.svg"/></a>
+  <a href="https://github.com/openads-project/monitoring/actions/workflows/consistency.yml"><img src="https://github.com/openads-project/monitoring/actions/workflows/consistency.yml/badge.svg"/></a>
 </p>
 
-**Demo repository for an OpenADS module**
-
-This repository serves as a demo for an OpenADS module, showcasing the structure and documentation style for OpenADS packages. It includes a simple ROS 2 node that subscribes to a topic, processes the data, and publishes the result. This is a short description of the repository and its purpose.
+This repository provides a monitoring and visualization container including, e.g. [RViz](https://github.com/ros2/rviz) and [RQt](https://docs.ros.org/en/rolling/Concepts/Intermediate/About-RQt.html), as well as, all relevant definitions and visualization plugins for messages used in [OpenADS](https://github.com/openads-project/).
 
 <p align="center">
   <strong>🚀 <a href="#-quick-start">Quick Start</a></strong> • <strong>💻 <a href="#-development">Development</a></strong> • <strong>📝 <a href="#-documentation">Documentation</a></strong>
@@ -27,13 +25,22 @@ This repository serves as a demo for an OpenADS module, showcasing the structure
 
 ## 🚀 Quick Start
 
-1. Start a container of the pre-built runtime image.
+1. Start a container of the pre-built runtime image with support for GPU usage and graphical output.
     ```bash
-    docker run --rm -it ghcr.io/openads-project/openads_demo_module:latest bash
+    docker run --gpus all --volume /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY --rm -it ghcr.io/openads-project/monitoring:latest bash
     ```
-1. Inside the container, launch the pre-built nodes.
+1. In the container, you can run graphical tools for monitoring and visualization or record data. For the latter, make sure to mount a local folder into the container with the `--volume` argument.
+
     ```bash
-    ros2 launch openads_demo_module openads_demo_module_launch.py
+    # RViz: message visualization
+    rviz2
+
+    # RQt: Various graphical user interfaces
+    rqt
+
+    # ROS 2 Bag: Record and replay ROS communication
+    ros2 bag record -a
+    ros2 bag play rosbag2_*
     ```
 
 ## 💻 Development
@@ -42,11 +49,11 @@ This repository serves as a demo for an OpenADS module, showcasing the structure
 
 1. Clone the repository.
     ```bash
-    git clone https://github.com/openads-project/openads_demo_module.git
+    git clone https://github.com/openads-project/monitoring.git
     ```
 1. Initialize the [`.openads-dev-environment`](https://github.com/openads-project/openads-dev-environment) submodule containing development environment configuration.
     ```bash
-    cd openads_demo_module
+    cd monitoring
     git submodule update --init --recursive
     ```
 1. Open the repository in [Visual Studio Code](https://code.visualstudio.com).
@@ -79,12 +86,12 @@ colcon test-result --verbose
 
 ## 📝 Documentation
 
-Package and node interfaces are documented in the respective package READMEs listed below. Implementation details are found in the [Source Code Documentation](https://openads-project.github.io/openads_demo_module).
+Package and node interfaces are documented in the respective package READMEs listed below. Implementation details are found in the [Source Code Documentation](https://openads-project.github.io/monitoring).
 
 | Package | Description |
 | --- | --- |
-| [openads_demo_module](openads_demo_module/README.md) | ROS 2 C++ package template for OpenADS |
-| [openads_demo_module_interfaces](openads_demo_module_interfaces/README.md) | ROS interface definitions for openads_demo_module |
+| [monitoring](monitoring/README.md) | Monitoring launch package |
+| [rviz_plugins](rviz_plugins/README.md) | Custom RViz plugins not directly associated with a specific repository |
 
 ## ⚖️ Licensing
 
@@ -96,11 +103,13 @@ Development and maintenance of this repository are supported by the following pr
 
 | Project | Funding Institution | Grant Number |
 | --- | --- | --- |
-| Demo Project | Demo Funding Institution | Demo Grant Number |
+| [AIGGREGATE](https://aiggregate.eu/) | 🇪🇺 European Union | 101202457 |
+| [AIthena](https://aithena.eu/) | 🇪🇺 European Union | 101076754 |
+| [autotech.agil](https://www.autotechagil.de/) | 🇩🇪 Federal Ministry for Research, Technology and Space (BMFTR) | 01IS22088A |
 
 <p>
   <img src="https://www.drought.uni-freiburg.de/stressres/images/bmftr-logo/image" height=70>
   <img src="https://ec.europa.eu/regional_policy/images/information-sources/logo-download-center/eu_funded_en.jpg" height=70>
 </p>
 
-<sub><sup>Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Climate, Infrastructure and Environment Executive Agency (CINEA). Neither the European Union nor CINEA can be held responsible for them.</sup></sub>
+<sup><sub>Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Climate, Infrastructure and Environment Executive Agency (CINEA). Neither the European Union nor CINEA can be held responsible for them.</sub></sup>
