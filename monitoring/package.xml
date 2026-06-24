@@ -6,8 +6,8 @@
   <version>1.0.0</version>
   <description>Monitoring launch package</description>
 
-  <maintainer email="opensource@ika.rwth-aachen.de">Institute for Automtive Engineering (ika), RWTH Aachen University</maintainer>
-  <author email="opensource@ika.rwth-aachen.de">Institute for Automtive Engineering (ika), RWTH Aachen University</author>
+  <maintainer email="opensource@ika.rwth-aachen.de">Institute for Automotive Engineering (ika), RWTH Aachen University</maintainer>
+  <author email="opensource@ika.rwth-aachen.de">Institute for Automotive Engineering (ika), RWTH Aachen University</author>
 
   <license>Apache-2.0</license>
 

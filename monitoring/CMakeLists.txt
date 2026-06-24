@@ -12,7 +12,6 @@ install(DIRECTORY launch
   OPTIONAL
 )
 
-install(
-  DIRECTORY config/
-  DESTINATION config
+install(DIRECTORY config
+  DESTINATION share/${PROJECT_NAME}
 )
