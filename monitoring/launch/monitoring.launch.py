@@ -3,9 +3,6 @@
 # Copyright Institute for Automotive Engineering (ika), RWTH Aachen University
 # SPDX-License-Identifier: Apache-2.0
 
-import os
-
-from ament_index_python import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
@@ -22,7 +19,7 @@ def generate_launch_description():
         DeclareLaunchArgument("namespace", default_value="", description="node namespace"),
         DeclareLaunchArgument(
             "config",
-            default_value=os.path.join(get_package_share_directory("monitoring"), "config", "conf.rviz"),
+            default_value="/docker-ros/ws/install/monitoring/config/conf.rviz",
             description="path to rviz config file",
         ),
         DeclareLaunchArgument(
