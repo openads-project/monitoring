@@ -17,4 +17,4 @@ rm -rf /var/lib/apt/lists/*
 # download and set up alias for rviz dark mode
 mkdir -p /opt/ros/${ROS_DISTRO}/share/rviz2/style
 curl -o /opt/ros/${ROS_DISTRO}/share/rviz2/style/dark.qss https://raw.githubusercontent.com/davutcanakbas/rviz_dark_theme/refs/heads/main/rviz/dark.qss
-echo "alias darkviz2='rviz2 --stylesheet /opt/ros/jazzy/share/rviz2/style/dark.qss'" >> /root/.bashrc
+echo "alias darkviz2='rviz2 --stylesheet /opt/ros/${ROS_DISTRO}/share/rviz2/style/dark.qss'" >> /root/.bashrc
