@@ -50,8 +50,8 @@ repositories:
   zed-ros2-interfaces:
     type: git
     url: https://github.com/stereolabs/zed-ros2-interfaces.git
-    version: 5.3.0
+    version: humble-v4.1.4
   zed-ros2-examples:
     type: git
     url: https://github.com/stereolabs/zed-ros2-examples.git
-    version: v5.4.0
+    version: humble-v4.1.4
