@@ -2,7 +2,7 @@ repositories:
   carla_msgs:
     type: git
     url: https://github.com/carla-simulator/ros-carla-msgs.git
-    version: master
+    version: 081fdcdc8a4f8d4ce936b792c4ef13aba3fd7478
   cloudini:
     type: git
     url: https://github.com/facontidavide/cloudini.git
@@ -14,7 +14,7 @@ repositories:
   hector_recorder:
     type: git
     url: https://github.com/tu-darmstadt-ros-pkg/hector_recorder.git
-    version: main
+    version: 3942accff80ebca43257db67c70b63ec8a018fb4
   lanelet2_map_server:
     type: git
     url: https://github.com/openads-project/lanelet2_map_server.git
@@ -30,7 +30,7 @@ repositories:
   ros2bag_tools:
     type: git
     url: https://github.com/AIT-Assistive-Autonomous-Systems/ros2bag_tools.git
-    version: rolling
+    version: d5eb9419aa2347204aa0e33949e7545192f3bbdf
   rtcm_msgs:
     type: git
     url: https://github.com/tilk/rtcm_msgs.git
@@ -54,4 +54,4 @@ repositories:
   zed-ros2-examples:
     type: git
     url: https://github.com/stereolabs/zed-ros2-examples.git
-    version: 5.3.0
+    version: v5.4.0
