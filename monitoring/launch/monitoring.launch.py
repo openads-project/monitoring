@@ -19,7 +19,7 @@ def generate_launch_description():
         DeclareLaunchArgument("namespace", default_value="", description="node namespace"),
         DeclareLaunchArgument(
             "config",
-            default_value="/docker-ros/ws/install/monitoring/config/conf.rviz",
+            default_value="/docker-ros/ws/install/monitoring/share/monitoring/config/conf.rviz",
             description="path to rviz config file",
         ),
         DeclareLaunchArgument(
