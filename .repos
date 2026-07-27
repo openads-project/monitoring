@@ -43,10 +43,10 @@ repositories:
     type: git
     url: https://github.com/teamspatzenhirn/rviz_2d_overlay_plugins.git
     version: 36b3c86 # TODO: back to main once https://github.com/teamspatzenhirn/rviz_2d_overlay_plugins/issues/27 is fixed
-  sbg_driver:
+  sbg_ros2_driver:
     type: git
-    url: https://github.com/ika-rwth-aachen/sbg_ros2_driver.git
-    version: fix-body-outputs
+    url: https://github.com/SBG-Systems/sbg_ros2_driver.git
+    version: 3.4.0
   zed-ros2-interfaces:
     type: git
     url: https://github.com/stereolabs/zed-ros2-interfaces.git
