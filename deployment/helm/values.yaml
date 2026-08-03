@@ -1,0 +1,21 @@
+openadservice:
+  name: monitoring
+  image: ghcr.io/openads-project/monitoring:v1.0.0
+  env:
+    # --- name ------
+    NAMESPACE: /
+    NAME: monitoring
+    # --- other -----
+    LOG_LEVEL: info
+    USE_SIM_TIME: false
+    CONFIG: /docker-ros/ws/install/monitoring/share/monitoring/config/conf.rviz
+  args:
+  - /bin/bash
+  - -ic
+  - |
+    ros2 launch monitoring monitoring.launch.py \
+      namespace:=${NAMESPACE} \
+      name:=${NAME} \
+      log_level:=${LOG_LEVEL} \
+      use_sim_time:=${USE_SIM_TIME} \
+      config:=${CONFIG}
