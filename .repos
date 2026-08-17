@@ -26,7 +26,7 @@ repositories:
   planning_interfaces:
     type: git
     url: https://github.com/ika-rwth-aachen/planning_interfaces.git
-    version: v1.1.0
+    version: viz-yield-stop-movement-state
   ros2bag_tools:
     type: git
     url: https://github.com/AIT-Assistive-Autonomous-Systems/ros2bag_tools.git
