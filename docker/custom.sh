@@ -1,5 +1,8 @@
 mkdir -p $WORKSPACE/src/upstream
-git clone --depth 1 https://github.com/ika-rwth-aachen/carla-ros-bridge.git
+git clone --depth 1 https://github.com/openads-project/carla-ros-bridge.git
+cd carla-ros-bridge
+git checkout update/ui-scenario
+cd ..
 mv carla-ros-bridge/rviz_carla_plugin $WORKSPACE/src/upstream
 mv carla-ros-bridge/carla_ros_scenario_runner_types $WORKSPACE/src/upstream
 rm -rf carla-ros-bridge
