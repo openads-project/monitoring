@@ -22,11 +22,11 @@ repositories:
   perception_interfaces:
     type: git
     url: https://github.com/ika-rwth-aachen/perception_interfaces.git
-    version: v1.1.0
+    version: main
   planning_interfaces:
     type: git
     url: https://github.com/ika-rwth-aachen/planning_interfaces.git
-    version: viz-yield-stop-movement-state
+    version: main
   ros2bag_tools:
     type: git
     url: https://github.com/AIT-Assistive-Autonomous-Systems/ros2bag_tools.git
