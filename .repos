@@ -10,7 +10,7 @@ repositories:
   etsi_its_messages:
     type: git
     url: https://github.com/ika-rwth-aachen/etsi_its_messages.git
-    version: v3.4.0
+    version: v3.5.0
   hector_recorder:
     type: git
     url: https://github.com/tu-darmstadt-ros-pkg/hector_recorder.git
@@ -22,11 +22,11 @@ repositories:
   perception_interfaces:
     type: git
     url: https://github.com/ika-rwth-aachen/perception_interfaces.git
-    version: main
+    version: v1.1.1
   planning_interfaces:
     type: git
     url: https://github.com/ika-rwth-aachen/planning_interfaces.git
-    version: main
+    version: v1.1.1
   ros2bag_tools:
     type: git
     url: https://github.com/AIT-Assistive-Autonomous-Systems/ros2bag_tools.git
