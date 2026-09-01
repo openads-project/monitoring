@@ -3,7 +3,7 @@
 <package format="3">
 
   <name>monitoring</name>
-  <version>1.0.0</version>
+  <version>26.9.1</version>
   <description>Monitoring launch package</description>
 
   <maintainer email="opensource@ika.rwth-aachen.de">Institute for Automotive Engineering (ika), RWTH Aachen University</maintainer>
