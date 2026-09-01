@@ -1,6 +1,6 @@
 openadservice:
   name: monitoring
-  image: ghcr.io/openads-project/monitoring:v1.0.0
+  image: ghcr.io/openads-project/monitoring:v26.9.1
   env:
     # --- name ------
     NAMESPACE: /

@@ -1,7 +1,7 @@
 apiVersion: v2
 name: monitoring
-version: 1.0.0
-appVersion: 1.0.0
+version: 26.9.1
+appVersion: 26.9.1
 description: Monitoring launch package
 dependencies:
   - repository: oci://ghcr.io/openads-project/openads-helm
