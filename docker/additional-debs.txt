@@ -6,6 +6,7 @@ libxcb-shape0
 libxkbcommon-x11-0
 ros-$ROS_DISTRO-ackermann-msgs
 ros-$ROS_DISTRO-etsi-its-messages
+ros-$ROS_DISTRO-etsi-its-rviz-plugins
 ros-$ROS_DISTRO-ffmpeg-image-transport
 ros-$ROS_DISTRO-gps-msgs
 ros-$ROS_DISTRO-grid-map-rviz-plugin
@@ -13,6 +14,7 @@ ros-$ROS_DISTRO-image-transport-plugins
 ros-$ROS_DISTRO-point-cloud-transport-plugins
 ros-$ROS_DISTRO-rqt-tf-tree
 ros-$ROS_DISTRO-rviz-default-plugins
+ros-$ROS_DISTRO-rviz-satellite
 ros-$ROS_DISTRO-rviz-visual-tools
 ros-$ROS_DISTRO-topic-tools
 ros-$ROS_DISTRO-vision-msgs-rviz-plugins
