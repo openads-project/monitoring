@@ -7,7 +7,7 @@ repositories:
     type: git
     url: https://github.com/facontidavide/cloudini.git
     version: 1.2.0
-  hector_recorder:
+  hector_recorder: # TODO: never used, remove?
     type: git
     url: https://github.com/tu-darmstadt-ros-pkg/hector_recorder.git
     version: 3942accff80ebca43257db67c70b63ec8a018fb4
@@ -43,11 +43,11 @@ repositories:
     type: git
     url: https://github.com/SBG-Systems/sbg_ros2_driver.git
     version: 3.4.0
-  zed-ros2-interfaces:
+  zed-ros2-interfaces: # TODO: upgrade?
     type: git
     url: https://github.com/stereolabs/zed-ros2-interfaces.git
     version: humble-v4.1.4
-  zed-ros2-examples:
+  zed-ros2-examples: # TODO: upgrade?
     type: git
     url: https://github.com/stereolabs/zed-ros2-examples.git
     version: humble-v4.1.4
