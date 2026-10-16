@@ -31,14 +31,14 @@ repositories:
     type: git
     url: https://github.com/tilk/rtcm_msgs.git
     version: 1.1.6 # TODO: remove after orin runs with ubuntu24
-  rviz:
+  rviz: # TODO: remove once merged and released: https://github.com/ika-rwth-aachen/rviz/pull/3
     type: git
-    url: https://github.com/ika-rwth-aachen/rviz.git # revert after merge in rviz
+    url: https://github.com/ika-rwth-aachen/rviz.git
     version: jazzy-dropdown-menu-compressed-option
-  rviz_2d_overlay_plugins:
+  rviz_2d_overlay_plugins: # TODO: remove once merged and released: https://github.com/ika-rwth-aachen/rviz_2d_overlay_plugins/pull/1
     type: git
-    url: https://github.com/teamspatzenhirn/rviz_2d_overlay_plugins.git
-    version: 36b3c86 # TODO: back to main once https://github.com/teamspatzenhirn/rviz_2d_overlay_plugins/issues/27 is fixed
+    url: https://github.com/ika-rwth-aachen/rviz_2d_overlay_plugins.git
+    version: camera-overlay-fix
   sbg_ros2_driver:
     type: git
     url: https://github.com/SBG-Systems/sbg_ros2_driver.git
