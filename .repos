@@ -42,7 +42,7 @@ repositories:
   zed-ros2-interfaces:
     type: git
     url: https://github.com/stereolabs/zed-ros2-interfaces.git
-    version: v5.5.0
+    version: 5.5.0
   zed-ros2-examples:
     type: git
     url: https://github.com/stereolabs/zed-ros2-examples.git
