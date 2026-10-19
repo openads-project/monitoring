@@ -6,11 +6,7 @@ repositories:
   cloudini:
     type: git
     url: https://github.com/facontidavide/cloudini.git
-    version: 1.2.0
-  hector_recorder: # TODO: never used, remove?
-    type: git
-    url: https://github.com/tu-darmstadt-ros-pkg/hector_recorder.git
-    version: 3942accff80ebca43257db67c70b63ec8a018fb4
+    version: 1.4.1
   lanelet2_map_server:
     type: git
     url: https://github.com/openads-project/lanelet2_map_server.git
