@@ -23,10 +23,10 @@ repositories:
     type: git
     url: https://github.com/AIT-Assistive-Autonomous-Systems/ros2bag_tools.git
     version: d5eb9419aa2347204aa0e33949e7545192f3bbdf
-  rtcm_msgs:
+  rtcm_msgs: # TODO: remove once arm64 base image is ubuntu24; required by zed?
     type: git
     url: https://github.com/tilk/rtcm_msgs.git
-    version: 1.1.6 # TODO: remove after orin runs with ubuntu24
+    version: 1.1.6
   rviz: # TODO: remove once merged and released: https://github.com/ika-rwth-aachen/rviz/pull/3
     type: git
     url: https://github.com/ika-rwth-aachen/rviz.git
@@ -39,11 +39,11 @@ repositories:
     type: git
     url: https://github.com/SBG-Systems/sbg_ros2_driver.git
     version: 3.4.0
-  zed-ros2-interfaces: # TODO: upgrade?
+  zed-ros2-interfaces:
     type: git
     url: https://github.com/stereolabs/zed-ros2-interfaces.git
-    version: humble-v4.1.4
-  zed-ros2-examples: # TODO: upgrade?
+    version: v5.5.0
+  zed-ros2-examples:
     type: git
     url: https://github.com/stereolabs/zed-ros2-examples.git
-    version: humble-v4.1.4
+    version: v5.5.0
