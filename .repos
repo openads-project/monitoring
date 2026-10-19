@@ -18,7 +18,7 @@ repositories:
   perception_interfaces:
     type: git
     url: https://github.com/ika-rwth-aachen/perception_interfaces.git
-    version: main # TODO: v1.2.0
+    version: fix/allow-empty-state-covariance # TODO: v1.2.0
   planning_interfaces:
     type: git
     url: https://github.com/ika-rwth-aachen/planning_interfaces.git
@@ -35,10 +35,6 @@ repositories:
     type: git
     url: https://github.com/ika-rwth-aachen/rviz.git
     version: jazzy-dropdown-menu-compressed-option
-  rviz_2d_overlay_plugins: # TODO: remove once merged and released: https://github.com/ika-rwth-aachen/rviz_2d_overlay_plugins/pull/2
-    type: git
-    url: https://github.com/ika-rwth-aachen/rviz_2d_overlay_plugins.git
-    version: new/camera-overlay-fix
   sbg_ros2_driver:
     type: git
     url: https://github.com/SBG-Systems/sbg_ros2_driver.git
