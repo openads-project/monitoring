@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['manual_5fobject_5f_0',['manual_object_',['../classrviz__plugins_1_1displays_1_1GeofenceDisplay.html#a7282bc901cc1af5f1e767a9fbd48e5cd',1,'rviz_plugins::displays::GeofenceDisplay']]],
-  ['material_5f_1',['material_',['../classrviz__plugins_1_1displays_1_1GeofenceDisplay.html#a9e8578b99658fee33c11fa9cb809e351',1,'rviz_plugins::displays::GeofenceDisplay']]],
-  ['monitoring_2',['monitoring',['../index.html',1,'']]]
+  ['ogre_0',['Ogre',['../namespaceOgre.html',1,'']]],
+  ['oninitialize_1',['onInitialize',['../classrviz__plugins_1_1displays_1_1GeofenceDisplay.html#aadde9340a5b793f9fa4a5263a3a82d8a',1,'rviz_plugins::displays::GeofenceDisplay']]]
 ];
