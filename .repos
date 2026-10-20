@@ -6,11 +6,7 @@ repositories:
   cloudini:
     type: git
     url: https://github.com/facontidavide/cloudini.git
-    version: 1.2.0
-  hector_recorder:
-    type: git
-    url: https://github.com/tu-darmstadt-ros-pkg/hector_recorder.git
-    version: 3942accff80ebca43257db67c70b63ec8a018fb4
+    version: 1.4.1
   lanelet2_map_server:
     type: git
     url: https://github.com/openads-project/lanelet2_map_server.git
@@ -18,27 +14,27 @@ repositories:
   perception_interfaces:
     type: git
     url: https://github.com/ika-rwth-aachen/perception_interfaces.git
-    version: v1.1.2
+    version: v1.2.0
   planning_interfaces:
     type: git
     url: https://github.com/ika-rwth-aachen/planning_interfaces.git
-    version: v1.1.2
+    version: v1.2.0
   ros2bag_tools:
     type: git
     url: https://github.com/AIT-Assistive-Autonomous-Systems/ros2bag_tools.git
     version: d5eb9419aa2347204aa0e33949e7545192f3bbdf
-  rtcm_msgs:
+  rtcm_msgs: # TODO: remove once arm64 base image is ubuntu24; required by zed?
     type: git
     url: https://github.com/tilk/rtcm_msgs.git
-    version: 1.1.6 # TODO: remove after orin runs with ubuntu24
-  rviz:
+    version: 1.1.6
+  rviz: # TODO: remove once merged and released: https://github.com/ika-rwth-aachen/rviz/pull/3
     type: git
-    url: https://github.com/ika-rwth-aachen/rviz.git # revert after merge in rviz
+    url: https://github.com/ika-rwth-aachen/rviz.git
     version: jazzy-dropdown-menu-compressed-option
-  rviz_2d_overlay_plugins:
+  rviz_2d_overlay_plugins: # TODO: remove once merged and released: https://github.com/teamspatzenhirn/rviz_2d_overlay_plugins/pull/31
     type: git
-    url: https://github.com/teamspatzenhirn/rviz_2d_overlay_plugins.git
-    version: 36b3c86 # TODO: back to main once https://github.com/teamspatzenhirn/rviz_2d_overlay_plugins/issues/27 is fixed
+    url: https://github.com/ika-rwth-aachen/rviz_2d_overlay_plugins.git
+    version: new/camera-overlay-fix
   sbg_ros2_driver:
     type: git
     url: https://github.com/SBG-Systems/sbg_ros2_driver.git
@@ -46,8 +42,8 @@ repositories:
   zed-ros2-interfaces:
     type: git
     url: https://github.com/stereolabs/zed-ros2-interfaces.git
-    version: humble-v4.1.4
+    version: 5.5.0
   zed-ros2-examples:
     type: git
     url: https://github.com/stereolabs/zed-ros2-examples.git
-    version: humble-v4.1.4
+    version: v5.5.0
