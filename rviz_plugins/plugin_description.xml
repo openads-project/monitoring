@@ -9,4 +9,13 @@
     </description>
     <message_type>geometry_msgs/msg/PolygonStamped</message_type>
   </class>
+  <class
+    name="rviz_plugins/PlanRoute"
+    type="rviz_plugins::panels::PlanRoutePanel"
+    base_class_type="rviz_common::Panel"
+  >
+    <description>
+      Configures and monitors the Lanelet2 route planning action client. Supports saved waypoint routes, random destinations, and destinations selected with the Goal Pose tool.
+    </description>
+  </class>
 </library>
