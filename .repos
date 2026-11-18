@@ -14,7 +14,7 @@ repositories:
   perception_interfaces:
     type: git
     url: https://github.com/ika-rwth-aachen/perception_interfaces.git
-    version: v1.2.0
+    version: feature/object-evidence
   planning_interfaces:
     type: git
     url: https://github.com/ika-rwth-aachen/planning_interfaces.git
