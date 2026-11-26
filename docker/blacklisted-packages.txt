@@ -1,3 +1,4 @@
+lanelet2_route_planning
 zed_aruco_localization
 zed_depth_to_laserscan
 zed_display_rviz2
